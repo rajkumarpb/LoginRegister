@@ -1,0 +1,23 @@
+
+<%- include('includes/header') %>
+
+<div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">User Login</h2>
+        <label  class="sr-only">Username</label>
+        <input type="text" id="username" class="form-control" placeholder="username" required autofocus>
+        <br>
+        <label  class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <p>No Account? <a href="/users/register">Register </a></p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<%- include('includes/footer') %>
