@@ -1,23 +1,27 @@
 <%- include('includes/header') %>
 
-<div class="container">
-
-      <form class="form-signin">
+<div class="container reg-page">
+<% if(locals.errors) { %>
+<% errors.forEach(function(error){  %>
+<div class="alert alert-danger" ><%= error.msg %></div>
+<%  }) %>
+<% } %>
+      <form method="post" action="/users/register" class="form-signin">
         <h2 class="form-signin-heading">Registration</h2>
         <label  class="sr-only">Name</label>
-        <input type="text" id="name" class="form-control" placeholder="Name" required autofocus>
+        <input type="text" name="name" class="form-control" placeholder="Name" value="<%= (!!locals.name)?name:'' %>" required autofocus>
         <br>
         <label  class="sr-only">Username</label>
-        <input type="text" id="username" class="form-control" placeholder="username" required autofocus>
+        <input type="text" name="username" class="form-control" placeholder="username" required autofocus>
         <br>
         <label  class="sr-only">Email</label>
-        <input type="text" id="email" class="form-control" placeholder="email" required autofocus>
+        <input type="text" name="email" class="form-control" placeholder="email" required autofocus>
         <br>
         <label  class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
         <br>
         <label  class="sr-only">Confirm Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Confirm Password" required>
+        <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
          <p>Have Account? <a href="/users/login">Login </a></p>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
       </form>
